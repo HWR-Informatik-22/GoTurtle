@@ -18,8 +18,8 @@ var color uint8 = 1
 
 // Transform sets the location of the turtle to the coordinates (x1, y1)
 func Transform(img *image.Paletted, x1, y1 int) {
-center.X = x1
-center.Y = y1
+	center.X = x1
+	center.Y = y1
 }
 
 // Color sets the color of the turtle to one of the given colors (black, white, red, green, blue, yellow, magenta, cyan).
@@ -27,58 +27,58 @@ center.Y = y1
 func Color(c string) {
 switch c {
 case "black":
-color = 1
+	color = 1
 case "white":
-color = 0
+	color = 0
 case "red":
-color = 2
+	color = 2
 case "green":
-color = 3
+	color = 3
 case "blue":
-color = 4
+	color = 4
 case "yellow":
-color = 5
+	color = 5
 case "magenta":
-color = 6
+	color = 6
 case "cyan":
-color = 7
+	color = 7
 default:
-color = 1
+	color = 1
 }
 }
 
 // Up sets the orientation of the turtle to 90 degrees upwards
 func Up() {
-orientation = 90
+	orientation = 90
 }
 
 // Down sets the orientation of the turtle to 90 degrees downwards
 func Down() {
-orientation = -90
+	orientation = -90
 }
 
 // Left sets the orientation of the turtle to 180 degrees to the left
 func Left() {
-orientation = 180
+	orientation = 180
 }
 
 // Right sets the orientation of the turtle to 0 degrees to the right
 func Right() {
-orientation = 0
+	orientation = 0
 }
 
 // Move moves the turtle a certain distance in its current orientation and draws a line from its current location to its new location.
 // The new location is then stored in "center".
-func Move(img image.Paletted, distance int) {
-x2 := center.X + int(math.Cos(orientation(2math.Pi/360))float64(distance))
-y2 := center.Y + int(math.Sin(orientation(2math.Pi/360))*float64(distance))
-DrawLine(img, center.X, center.Y, x2, y2, color)
-Transform(img, x2, y2)
+func Move(img *image.Paletted, distance int) {
+	x2 := center.X + int(math.Cos(orientation*(2*math.Pi/360))*float64(distance))
+	y2 := center.Y + int(math.Sin(orientation*(2*math.Pi/360))*float64(distance))
+	DrawLine(img, center.X, center.Y, x2, y2, color)
+	Transform(img, x2, y2)
 }
 
 // Turn rotates the turtle a certain angle (in degrees) clockwise
 func Turn(angle float64) {
-orientation += angle
+	orientation += angle
 }
 
 func DrawLine(img *image.Paletted, x1, y1, x2, y2 int, col uint8) {
