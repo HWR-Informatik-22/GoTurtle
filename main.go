@@ -33,6 +33,9 @@ func main() {
 	rect := image.Rect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
 	img := image.NewPaletted(rect, palette)
 
+	//write your Turtle commands here
+	
+	//fractals drawn with the turtle
 	fr.Initialise(img)
 
 	images = append(images, img)
