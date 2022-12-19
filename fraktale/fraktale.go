@@ -1,7 +1,7 @@
 package fraktale
 
 import (
-	t "fraktale/turtle"
+	t "turtle/turtle"
 	"image"
 )
 
