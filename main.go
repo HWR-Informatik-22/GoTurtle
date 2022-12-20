@@ -1,7 +1,6 @@
 package main
 
 import (
-	fr "GoTurtle/fraktale"
 	"image"
 	"image/color"
 	"image/gif"
@@ -36,7 +35,7 @@ func main() {
 	//write your Turtle commands here
 	
 	//fractals drawn with the turtle
-	fr.Initialise(img)
+	Initialise(img)
 
 	images = append(images, img)
 	delay = append(delay, 500)
