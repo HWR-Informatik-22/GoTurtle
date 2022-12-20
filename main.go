@@ -1,7 +1,7 @@
 package main
 
 import (
-	fr "turtle/fraktale"
+	fr "GoTurtle/fraktale"
 	"image"
 	"image/color"
 	"image/gif"
